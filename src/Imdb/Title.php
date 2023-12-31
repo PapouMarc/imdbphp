@@ -1094,7 +1094,8 @@ EOF;
         $req->sendRequest();
         if (strpos($req->getResponseHeader("Content-Type"), 'image/jpeg') === 0 ||
             strpos($req->getResponseHeader("Content-Type"), 'image/gif') === 0 ||
-            strpos($req->getResponseHeader("Content-Type"), 'image/bmp') === 0) {
+            strpos($req->getResponseHeader("Content-Type"), 'image/bmp') === 0 ||
+            strpos($req->getResponseHeader("Content-Type"), 'image/webp') === 0) {
             $image = $req->getResponseBody();
         } else {
             $ctype = $req->getResponseHeader("Content-Type");
